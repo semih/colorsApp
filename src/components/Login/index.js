@@ -6,6 +6,11 @@ import styles from "./Login.module.css"
 import { postData } from '../../utils/helpers';
 import { Redirect } from 'react-router-dom'
 import { selectIsUserLoggedIn } from '../../redux/accessors';
+import Input from '../Input';
+import LoginButton from '../LoginButton';
+import LoginForm from '../LoginForm';
+import LoginErrorBar from '../LoginForm/LoginErrorBar';
+import Header from '../Header';
 
 export default function Login() {
     const dispatch = useDispatch()
@@ -18,8 +23,8 @@ export default function Login() {
 
     const isUserLoggedIn = useSelector(selectIsUserLoggedIn)
 
-    async function handleSubmitLogin() {
-
+    async function handleSubmitLogin(e) {
+        e.preventDefault();
         setErred(false)
         setLoading(true)
 
@@ -46,17 +51,14 @@ export default function Login() {
     }
 
     return (
-        <div className={styles.loginForm}>
-        {isErred && <div>Login error, check your password and try again</div>}
-            <label>
-                <span>Email</span>
-                <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
-            </label>
-            <label>
-                <span>Password</span>
-                <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-            </label>
-            <button disabled={isLoading || email === '' || password === ''} onClick={handleSubmitLogin}>login</button>
+        <div className={styles.loginWrapper}>
+            <Header />
+            { isErred && <LoginErrorBar />}
+            <LoginForm handleSubmit={handleSubmitLogin}>
+                <Input label="Email" type="email" value={email} handleChange={e => setEmail(e.target.value)} />
+                <Input label="Password" type="password" value={password} handleChange={e => setPassword(e.target.value)} />
+                <LoginButton disabled={isLoading || email === '' || password === ''}>Login</LoginButton>
+            </LoginForm>
         </div>
     )
 }
