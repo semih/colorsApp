@@ -1,5 +1,17 @@
 .loginWrapper {
-    padding-top: 100px;
-    width: 480px;
-    margin: auto;
-} 
+  padding-top: 100px;
+  width: 480px;
+  margin: auto;
+}
+
+.tip {
+  font-size: 14px;
+  color: #998080;
+  margin-top: 14px;
+}
+
+.textToSelect {
+  font-weight: 500;
+  user-select: all;
+  color: #715858;
+}
