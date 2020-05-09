@@ -1,0 +1,67 @@
+.colorCard {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 3.62642px 6.34624px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  width: 260px;
+  height: 340px;
+}
+
+.preview {
+  display: flex;
+  height: 240px;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.hex {
+  font-weight: bold;
+  font-size: 36px;
+  color: white;
+}
+
+.hoverText {
+  color: white;
+  margin-top: 8px;
+  font-size: 18px;
+  visibility: hidden;
+  margin-bottom: -28px;
+  opacity: 0;
+  transition: opacity 0.35s ease-in;
+}
+
+.preview:hover .hoverText {
+  visibility: visible;
+  opacity: 1;
+}
+
+.description {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.info {
+  display: flex;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.infoTitle {
+  color: #756a6a;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.infoValue {
+  color: #bf9e9e;
+}
