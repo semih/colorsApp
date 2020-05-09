@@ -5,15 +5,16 @@
   border-radius: 9px;
   width: 260px;
   height: 340px;
+  margin: 15px 10px;
 }
 
 .preview {
   display: flex;
+  flex-direction: column;
   height: 240px;
   border-top-left-radius: 9px;
   border-top-right-radius: 9px;
   align-items: center;
-  flex-direction: column;
   justify-content: center;
   cursor: pointer;
 }
